@@ -1,0 +1,33 @@
+{
+  "name": "lxp-mvp-backend",
+  "version": "1.0.0",
+  "description": "Node.js backend for the AI-Enabled LXP MVP",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js", // Requires nodemon: npm install -D nodemon
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lxp",
+    "ai",
+    "learning",
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "author": "Your Name / Team",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3", // Or latest version
+    "express": "^4.18.2", // Or latest version
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.0", // Or latest version
+    "mongoose": "^7.0.0" // Or latest version compatible with your Node version
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20" // Optional, for development
+  }
+}
