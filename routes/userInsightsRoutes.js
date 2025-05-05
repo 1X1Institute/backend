@@ -1,8 +1,15 @@
-const express = require('express');
-const router = express.Router();
-const { protect } = require('../middleware/authMiddleware');
-const { getUserInsights } = require('../controllers/userInsightsController');
+--- a/backend/controllers/userInsightsController.js
++++ b/backend/controllers/userInsightsController.js
 
-router.get('/', protect, getUserInsights);
++const asyncHandler = require('express-async-handler');
++const InteractionLog = require('../models/InteractionLog');
 
-module.exports = router;
+// @desc    Get User Insights
+// @route   GET /api/user-insights
+// @access  Private
+const getUserInsights = asyncHandler(async (req, res) => {
+  const interactions = await InteractionLog.find({ user: req.user.id });
+  res.status(200).json(interactions);
+});
+
+module.exports = { getUserInsights };
